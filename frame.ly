@@ -1,16 +1,16 @@
 \version "2.18.0"
-\language "english"	% sharp = s and flat = f
+\language "english"
 
 % time macro used to insert date in header
 date = #(strftime "%m/%d/%Y" (localtime (current-time)))
 
 % Variables pulled out of 'header' and 'paper' to make changing them easier
-myTitle = "SATB Choir Arrangement"
-mySubtitle = "(use 'content.ly' for changing default text and music)" % set to null to remove
+myTitle = "Choir Arrangement"
+mySubtitle = "SATB w/Piano and Violin accompaniment" % set to null to remove
 myVersion = "(version 2.7)"
 
-myComposer = "Music: Composer"
-myPoet = "Text: Lyricist"
+myComposer = "Music:  Composer (date range)"
+myPoet = "Text:  Lyricist (date range)"
 myArranger = "Arranged by ME"
 
 myCopyright = "Copyright information"

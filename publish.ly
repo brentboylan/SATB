@@ -9,9 +9,9 @@ myTitle = "Choir Arrangement"
 mySubtitle = "SATB w/Piano and Violin accompaniment" % set to null to remove
 myVersion = "(version 2.7)"
 
-myComposer = "Music:  Composer F. Music (1844 - 1899)"
-myPoet = "Text:  Lyricist O. Words (1877 - 1930)"
-myArranger = "Arranged by Brent M. Boylan"
+myComposer = "Music:  Composer (date range)"
+myPoet = "Text:  Lyricist (date range)"
+myArranger = "Arranged by ME"
 
 myCopyright = "Copyright information"
 myContactInfo = "placeholder"
@@ -295,24 +295,6 @@ pianoPart = \new PianoStaff \with {
       \context {
         \Staff \RemoveEmptyStaves 				% remove empty staves except from first system
         \override VerticalAxisGroup #'remove-first = ##t  	% remove empty staves from the first system
-      }
-      
-    }
-    
-    
-    % this change comes from lsr.di.unimi.it/LSR/Item0fbe.html?id=438
-    % outputs a seperate midi file for each voice on a staff
-    \midi { 
-      % remove 'Staff_performer from Staff context
-      \context { 
-        \Staff
-        \remove "Staff_performer"
-      }
-      
-      % and put it in Voice context for separate tracks
-      \context { 
-        \Voice
-        \consists "Staff_performer"   
       }
     }
   }
