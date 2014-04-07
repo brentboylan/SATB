@@ -36,11 +36,11 @@ global = {
 }
 
 % These parts are placeholders only
-violin = \relative c'' { c1 }
+violin = \relative c'' { \global c1 }
 soprano = \relative c'' { \global c1 \bar "|." }
-alto = \relative c' { c1 }
-tenor = \relative c' { c1 }
-bass = \relative c { c1 }
+alto = \relative c' { \global c1 }
+tenor = \relative c' { \global c1 }
+bass = \relative c { \global c1 }
 verse = \lyricmode { Temp }
 
 sopranoVerse = \lyricmode { }
