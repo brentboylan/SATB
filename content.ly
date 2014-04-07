@@ -7,7 +7,7 @@
 %%% this file in the same folder with the name 'content.ly'
 
 % Variables pulled out of 'header' to make changing them easier
-myTitle = "SATB Choir Arrangement"
+myTitle = "New Choir Arrangement"
 mySubtitle = "SATB with Piano accompaniment" % set to null to remove
 myVersion = "(version 1.0)"
 

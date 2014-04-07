@@ -35,87 +35,25 @@ global = {
   \MergeRests
 }
 
-
-violin = \relative c'' {
-  \global
-  
-  c1
-  
-  \bar "|."
-}
-
-
-soprano = \relative c'' {
-  \global
-  
-  %R1*8
-  c1
-  
-  \bar "|."
-}
-
-
-alto = \relative c' {
-  \global
-  
-  %R1*8
-  c1
-  
-  \bar "|."
-}
-
-
-tenor = \relative c' {
-  \global
-  
-  %R1*8
-  c1
-  
-  \bar "|."
-}
-
-
-bass = \relative c {
-  \global
-  
-  %R1*8
-  c1
-  
-  \bar "|."
-}
-
-
-verse = \lyricmode {
-  Temp
-  
-}
-
-
-right = \relative c'' {
-  \global
-  
-  c1
-  
-}
+% These parts are placeholders only
+violin = \relative c'' { \global c1 }
+soprano = \relative c'' { \global c1 \bar "|." }
+alto = \relative c' { \global c1 }
+tenor = \relative c' { \global c1 }
+bass = \relative c { \global c1 }
+verse = \lyricmode { Temp }
 
 % Pedal shorthand macros
 PDn = \sustainOn
 PUp = \sustainOff
 Ped = \PUp\PDn
 
-
-left = \relative c {
-  \global
-  \set Staff.pedalSustainStyle = #'bracket
-  
-  c1\PDn 
-  
-  \bar "|."
-}
+right = \relative c'' { \global c1 }
+left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \bar "|." }
 
 
 %%% This pulls in specific content and replaces all that is listed above.
-%\include "content.ly"
+\include "content.ly"
 
 
 \header {

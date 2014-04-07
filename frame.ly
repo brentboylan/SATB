@@ -72,28 +72,13 @@ rehearsalMidi = #
    >>
  #})
 
-right = \relative c'' {
-  \global
-  
-  c1
-  
-}
-
 % Pedal shorthand macros
 PDn = \sustainOn
 PUp = \sustainOff
 Ped = \PUp\PDn
 
-
-left = \relative c {
-  \global
-  \set Staff.pedalSustainStyle = #'bracket
-  
-  c1\PDn 
-  
-  \bar "|."
-}
-
+right = \relative c'' { \global c1 }
+left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \bar "|." }
 
 %%% This pulls in specific content and replaces all that is listed above.
 \include "content.ly"
