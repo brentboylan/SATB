@@ -127,6 +127,13 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
   outer-margin = 0.4\in
   binding-offset = 0.2\in
   
+  #(define fonts
+     (make-pango-font-tree
+      "Perpetua"
+      "Arial Narrow"
+      "Alex Brush"
+      (/ staff-height pt 20)))
+  
   system-system-spacing #'basic-distance = #15     % sets spacing between staves
 }
 

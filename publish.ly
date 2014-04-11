@@ -55,25 +55,35 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
 %%% This pulls in specific content and replaces all that is listed above.
 \include "content.ly"
 
+\paper {
+  #(set-paper-size "octavo")
+  #(define fonts
+     (make-pango-font-tree
+      "Perpetua"
+      "Arial Narrow"
+      "Alex Brush"
+      (/ staff-height pt 20)))
+}
 
 \header {
-  title = \markup {
+  \markup {
     \vspace #8 \left-align \center-column {
-      \abs-fontsize #46 \override #'(font-name . "Alex Brush") \bold
+      \abs-fontsize #46 \typewriter
       \myTitle
       
-      \abs-fontsize #20 \override #'(font-name . "Arial Narrow") \bold
+      \vspace #1
+      \abs-fontsize #20 \sans
       \mySubtitle
       
       \vspace #4
-      \abs-fontsize #14 \override #'(font-name . "Arial Narrow")
+      \abs-fontsize #14 \sans
       \myComposer
       
-      \abs-fontsize #14 \override #'(font-name . "Arial Narrow")
+      \abs-fontsize #14 \sans
       \myPoet
       
       \vspace #2
-      \abs-fontsize #18 \override #'(font-name . "Arial Narrow")
+      \abs-fontsize #18 \sans
       \myArranger
       
       \vspace #25
@@ -103,10 +113,7 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
   tagline = ##f
 }
 
-\paper {
-  #(set-paper-size "octavo")
-  
-}
+
 
 \markup \null
 
