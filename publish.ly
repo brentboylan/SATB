@@ -43,6 +43,11 @@ tenor = \relative c' { \global c1 }
 bass = \relative c { \global c1 }
 verse = \lyricmode { Temp }
 
+sopranoVerse = \lyricmode { }
+altoVerse = \lyricmode { }
+tenorVerse = \lyricmode { }
+bassVerse = \lyricmode { }
+
 % Pedal shorthand macros
 PDn = \sustainOn
 PUp = \sustainOff
@@ -72,42 +77,57 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
       \myTitle
       
       \vspace #1
-      \abs-fontsize #20 \sans
+      \abs-fontsize #16 \sans
       \mySubtitle
       
-      \vspace #4
-      \abs-fontsize #14 \sans
+      \vspace #1
+      \override #'(thickness . 4 )
+      % \draw-line #'(70 . 0)
+      \draw-hline
+      
+      \vspace #-0.6
+      \override #'(thickness . 4 )
+      \draw-hline
+      
+      \vspace #3
+      \abs-fontsize #16 \sans
       \myComposer
       
-      \abs-fontsize #14 \sans
+      \abs-fontsize #16 \sans
       \myPoet
       
       \vspace #2
-      \abs-fontsize #18 \sans
+      \abs-fontsize #16 \sans
       \myArranger
       
-      \vspace #25
+      \vspace #22
+      \override #'(thickness . 4 )
+      % \draw-line #'(70 . 0)
+      \draw-hline
+      
+      \vspace #-0.6
+      \override #'(thickness . 4 )
+      \draw-hline
+      
+      \vspace #0.5
+      
       \fill-line {
         
         \column {
-          \vspace #.9
-          \override #'(line-width . 30)
-          \abs-fontsize #7 \wordwrap {
+          \vspace #0.3
+          \override #'(line-width . 20)
+          \abs-fontsize #8 \italic \wordwrap {
             Visit our website to learn more about
-            other great arrangements.
+            other great arrangements for your choir.
           }
         }
         
-        \abs-fontsize #8 \column  {
-          \bold \fontsize #4 \caps "As A River Publishing"
+        \abs-fontsize #10 \column  {
+          \bold \fontsize #2 \caps "As A River Publishing"
           "P.O. Box 33, Manti, UT  84642"
-          \bold \fontsize #2 "asariver.com"
+          \bold "asariver.com"
         }
-        
-        
       }
-    
-    
     }
   }
   tagline = ##f
@@ -143,8 +163,6 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
           to read.
           
         }
-
-        
       }
     }
   }
@@ -210,40 +228,36 @@ pianoPart = \new PianoStaff \with {
 \bookpart {
   \header {
   title = \markup {
-    \abs-fontsize #42  % 18 to 22
-    \override #'(font-name . "Alex Brush") % change title font here
+    \abs-fontsize #40 \typewriter
     \myTitle 
-  }  % change variable above
-  
-  subtitle = \markup {
-    \abs-fontsize #14
-    \override #'(font-name . "Arial Narrow")
-    \mySubtitle 
   }
   
-  % I like to include a version number and update manually as changes are made
+  subtitle = \markup {
+    \abs-fontsize #12 \sans
+    \mySubtitle 
+  }
+    
   subsubtitle = \markup {
-    \abs-fontsize #12
-    \override #'(font-name . "Arial Narrow")
+    \abs-fontsize #10 \sans
     \myVersion 
   }
   
   composer = \markup {
-    \override #'(font-name . "Arial Narrow")
+    \sans
     \myComposer
-  } % For arrangements, my preference is to include the words Music: and Text:
+  }
   
   poet = \markup {
-    \override #'(font-name . "Arial Narrow")
+    \sans
     \myPoet
-  } % followed by the names, birth, and death years, if known
+  }
   
   arranger = \markup {
-    \override #'(font-name . "Arial Narrow")
+    \sans
     \myArranger
-  } % Comment out or delete this line if not needed
+  } 
   
-  copyright = \markup \abs-fontsize #8 {
+  copyright = \markup \abs-fontsize #9 {
     \center-column {
       \line { "Copyright" \char ##x00A9 \myCopyright }
       \line { "Revision Date:" \italic \date }
@@ -255,15 +269,16 @@ pianoPart = \new PianoStaff \with {
   tagline = \markup {
     \column {
       \fill-line {
-        \abs-fontsize #7 \column  {
-          \bold \caps "As A River Publishing"
+        \abs-fontsize #9 \column  {
+          \bold \fontsize #2 \caps "As A River Publishing"
           "P.O. Box 33, Manti, UT  84642"
           \bold "asariver.com"
         }
         
         \column {
-          \override #'(line-width . 20)
-          \abs-fontsize #7 \wordwrap {
+          \vspace #1.49
+          \override #'(line-width . 50)
+          \abs-fontsize #8 \wordwrap {
             Visit our website to learn more about
             other great arrangements for your choir.
           }
