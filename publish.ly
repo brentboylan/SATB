@@ -72,7 +72,7 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
 
 \header {
   \markup {
-    \vspace #8 \left-align \center-column {
+    \vspace #7 \left-align \center-column {
       \abs-fontsize #46 \typewriter
       \myTitle
       
@@ -82,7 +82,6 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
       
       \vspace #1
       \override #'(thickness . 4 )
-      % \draw-line #'(70 . 0)
       \draw-hline
       
       \vspace #-0.6
@@ -100,9 +99,13 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
       \abs-fontsize #16 \sans
       \myArranger
       
-      \vspace #22
+      \vspace #8
+      
+      \line{ \epsfile #X #80 #"As a river.eps"}
+      
+      \vspace #3
+      
       \override #'(thickness . 4 )
-      % \draw-line #'(70 . 0)
       \draw-hline
       
       \vspace #-0.6
