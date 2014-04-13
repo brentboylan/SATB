@@ -99,11 +99,11 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
       \abs-fontsize #16 \sans
       \myArranger
       
-      \vspace #8
+      \vspace #6
       
-      \line{ \epsfile #X #80 #"As a river.eps"}
+      \line{ \epsfile #X #85 #"As a river.eps"}
       
-      \vspace #3
+      \vspace #5
       
       \override #'(thickness . 4 )
       \draw-hline

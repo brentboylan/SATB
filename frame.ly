@@ -83,24 +83,47 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
 %%% This pulls in specific content and replaces all that is listed above.
 \include "content.ly"
 
+\paper {
+  #(set-paper-size "letter") % Without this line paper size defaults to a4
+  top-margin = 0.4\in
+  left-margin = 0.5\in
+  right-margin = 0.5\in  
+  bottom-margin = 0.4\in
+  
+  two-sided = ##f % set to true for hole-punched copies
+  inner-margin = 0.4\in
+  outer-margin = 0.4\in
+  binding-offset = 0.2\in
+  
+  #(define fonts
+     (make-pango-font-tree
+      "Perpetua"
+      "Arial Narrow"
+      "Alex Brush"
+      (/ staff-height pt 20)))
+  
+  system-system-spacing #'basic-distance = #15     % sets spacing between staves
+}
+
+
 \header {
   title = \markup {
-    \abs-fontsize #22  % 18 to 22
-    \override #'(font-name . "Moire ExtraBold") % change title font here
+    \abs-fontsize #36
+    \typewriter
     \myTitle 
-  }  % change variable above
+  }
   
-  subtitle = \mySubtitle 
+  subtitle = \markup { \sans \mySubtitle }
   
-  % I like to include a version number and update manually as changes are made
   subsubtitle = \markup {
     \abs-fontsize #10
+    \sans
     \myVersion 
   }
   
-  composer = \myComposer % For arrangements, my preference is to include the words Music: and Text:
-  poet = \myPoet % followed by the names, birth, and death years, if known
-  arranger = \myArranger % Comment out or delete this line if not needed
+  composer = \markup { \sans \myComposer }
+  poet = \markup { \sans\myPoet } 
+  arranger = \markup { \sans \myArranger }
   
   copyright = \markup \abs-fontsize #8 {
     \center-column {
@@ -225,16 +248,17 @@ pianoPart = \new PianoStaff \with {
 >>
 
 
-%%% Full score, octavio for publication
+%%% Full score, octavo for publication
 \book {
   \header {
     title = \markup {
-      \abs-fontsize #18  % 18 to 22
-      \override #'(font-name . "Moire ExtraBold") % change title font here
+      \abs-fontsize #30
+      \typewriter
       \myTitle 
     }
     
     subtitle = \markup {
+      \sans
       \abs-fontsize #11
       \mySubtitle
     }
@@ -244,7 +268,7 @@ pianoPart = \new PianoStaff \with {
     #(set-paper-size "octavo")
     top-margin = 0.5\in
   }
-
+  
   \score {
     <<
       \violinPart
@@ -298,6 +322,7 @@ pianoPart = \new PianoStaff \with {
 
 %%% Full score, full-sized for accompanist
 \book {
+  \bookOutputSuffix "full"
   \score {
     <<
       \violinPart
@@ -335,6 +360,7 @@ pianoPart = \new PianoStaff \with {
 
 %%% Choir music only
 \book {
+  \bookOutputSuffix "choir"
   \score {
     <<
       \choirPart
@@ -370,6 +396,7 @@ pianoPart = \new PianoStaff \with {
 
 %%% Soloist music only
 \book {
+  \bookOutputSuffix "solo"
   \score {
     <<
       \violinPart
