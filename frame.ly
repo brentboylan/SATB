@@ -85,10 +85,10 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
 
 \paper {
   #(set-paper-size "letter") % Without this line paper size defaults to a4
-  top-margin = 0.4\in
-  left-margin = 0.5\in
-  right-margin = 0.5\in  
-  bottom-margin = 0.4\in
+  top-margin = 0.3\in
+  left-margin = 0.3\in
+  right-margin = 0.3\in  
+  bottom-margin = 0.3\in
   
   two-sided = ##f % set to true for hole-punched copies
   inner-margin = 0.4\in
@@ -108,7 +108,7 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
 
 \header {
   title = \markup {
-    \abs-fontsize #36
+    \abs-fontsize #42
     \typewriter
     \myTitle 
   }
@@ -134,33 +134,27 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
     }
   }
   
-  tagline = \markup \abs-fontsize #7 { \myTagline }
+  tagline = \markup {
+    \column {
+      \fill-line {
+        \abs-fontsize #9 \column  {
+          \bold \fontsize #2 \caps "As A River Publishing"
+          "P.O. Box 33, Manti, UT  84642"
+          \bold "asariver.com"
+        }
+        
+        \column {
+          \vspace #1.49
+          \override #'(line-width . 50)
+          \abs-fontsize #8 \wordwrap {
+            Visit our website to learn more about
+            other great arrangements for your choir.
+          }
+        }
+      }
+    }
+  }
 }
-
-
-\paper {
-  #(set-paper-size "letter") % Without this line paper size defaults to a4
-  top-margin = 0.4\in
-  left-margin = 0.5\in
-  right-margin = 0.5\in  
-  bottom-margin = 0.4\in
-  
-  two-sided = ##f % set to true for hole-punched copies
-  inner-margin = 0.4\in
-  outer-margin = 0.4\in
-  binding-offset = 0.2\in
-  
-  #(define fonts
-     (make-pango-font-tree
-      "Perpetua"
-      "Arial Narrow"
-      "Alex Brush"
-      (/ staff-height pt 20)))
-  
-  system-system-spacing #'basic-distance = #15     % sets spacing between staves
-}
-
-
 
 
 violinPart = \new Staff \with {
@@ -252,7 +246,7 @@ pianoPart = \new PianoStaff \with {
 \book {
   \header {
     title = \markup {
-      \abs-fontsize #30
+      \abs-fontsize #36
       \typewriter
       \myTitle 
     }

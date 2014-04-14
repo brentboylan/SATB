@@ -231,7 +231,7 @@ pianoPart = \new PianoStaff \with {
 \bookpart {
   \header {
   title = \markup {
-    \abs-fontsize #40 \typewriter
+    \abs-fontsize #36 \typewriter
     \myTitle 
   }
   
