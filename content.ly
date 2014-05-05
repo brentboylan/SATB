@@ -1,4 +1,4 @@
-\version "2.18.0"
+\version "2.18.2"
 %%% This file allows for 'Separation Of Concerns' when creating your music
 %%% It is 'include'(d) into the main file in a way that replaces the default
 %%% placeholders.
@@ -35,78 +35,21 @@ global = {
 }
 
 % Music goes here:
-violin = \relative c'' {
-  \global
-  
-  c1
-  
-  \bar "|."
-}
-
-
-soprano = \relative c'' {
-  \global
-  
-  %R1*8
-  c1
-  
-  \bar "|."
-}
-
-
-alto = \relative c' {
-  \global
-  
-  %R1*8
-  c1
-  
-  \bar "|."
-}
-
-
-tenor = \relative c' {
-  \global
-  
-  %R1*8
-  c1
-  
-  \bar "|."
-}
-
-
-bass = \relative c {
-  \global
-  
-  %R1*8
-  c1
-  
-  \bar "|."
-}
-
-
-verse = \lyricmode {
-  Temp
-  
-}
+violin = \relative c'' { \global c1 \bar "|." }
+soprano = \relative c'' { \global c1 \bar "|." }
+alto = \relative c' { \global c1 \bar "|." }
+tenor = \relative c' { \global c1 \bar "|." }
+bass = \relative c { \global c1 \bar "|." }
+verse = \lyricmode { Temp }
 
 sopranoVerse = \lyricmode { }
 altoVerse = \lyricmode { }
 tenorVerse = \lyricmode { }
 bassVerse = \lyricmode { }
 
-right = \relative c'' {
-  \global
-  
-  c1
-  
-}
-
-
-left = \relative c {
-  \global
+right = \relative c'' { \global c1 \bar "|." }
+left = \relative c { \global
   \set Staff.pedalSustainStyle = #'bracket
-  
   c1\PDn 
-  
   \bar "|."
 }

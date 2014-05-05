@@ -136,10 +136,7 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
   tagline = ##f
 }
 
-
-
 \markup \null
-
 
 \markup {
   \fill-line {
@@ -170,9 +167,6 @@ left = \relative c { \global \set Staff.pedalSustainStyle = #'bracket c1\PDn \ba
     }
   }
 }
-
-
-
 
 violinPart = \new Staff \with {
   instrumentName = "Violin"
@@ -214,7 +208,6 @@ choirPart = \new ChoirStaff
   >>
 >> 
 
-
 pianoPart = \new PianoStaff \with {
   instrumentName = "Piano"
   shortInstrumentName = ""
@@ -226,7 +219,6 @@ pianoPart = \new PianoStaff \with {
     midiInstrument = "acoustic grand"
   } { \clef bass \left }
 >>
-
 
 \bookpart {
   \header {
@@ -289,8 +281,7 @@ pianoPart = \new PianoStaff \with {
       }
     }
   }
-  }
-
+}
 
 \score {
     <<
@@ -298,7 +289,6 @@ pianoPart = \new PianoStaff \with {
       \choirPart
       \pianoPart
     >>
-
 
     \layout {
       #(layout-set-staff-size 16)					% staff size, default is 20
